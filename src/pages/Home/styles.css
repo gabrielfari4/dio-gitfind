@@ -23,10 +23,11 @@ input {
     border-radius: 22px;
     min-width: 250px;
     margin-right: 12px;
-    width: 85%;
+    width: 50%;
     background: transparent;
     font-size: 18px;
     padding: 10px;
+    color: white;
 }
 
 button {
