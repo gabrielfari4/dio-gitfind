@@ -3,6 +3,8 @@ import background from '../../assets/background2.png'
 import ItemList from "../../components/ItemList";
 import './styles.css';
 import { useState } from "react";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 function App() {
   const [user, setUser] = useState('');
@@ -35,8 +37,6 @@ function App() {
         }
       }
 
-      //console.log(newUser)
-      console.log(currentUser)
 
     } catch (error) {
       console.error("Error fetching user data: ", error);
@@ -50,8 +50,11 @@ function App() {
         <img src={background} className="background" alt="Imagem github" />
         <div className="info">
           <div>
-            <input name="usuario" value={user} onChange={handleUser} placeholder="@user" />
-            <button onClick={handleGetData}>Buscar</button>
+            <Input name='usuario'
+            value={user}
+            onChange={handleUser}
+            placehodler='@user' />
+            <Button onClick={handleGetData}>Buscar</Button>
           </div>
           {currentUser?.name ? (
             <>
@@ -68,7 +71,6 @@ function App() {
           ) : null}
           
           {repos?.length ? (
-
             <div className="repositorio">
               <h4>Repositórios</h4>
               {repos.map(repo => (
